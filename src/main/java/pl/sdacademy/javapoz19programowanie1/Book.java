@@ -4,14 +4,24 @@ public class Book {
     private String title;
     private int releaseYear;
     private int pages;
+    private Author author;
 
     public Book() {
     }
 
-    public Book(String title, int releaseYear, int pages) {
+    public Book(String title, int releaseYear, int pages, Author author) {
         this.title = title;
         this.releaseYear = releaseYear;
         this.pages = pages;
+        this.author = author;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 
     @Override
