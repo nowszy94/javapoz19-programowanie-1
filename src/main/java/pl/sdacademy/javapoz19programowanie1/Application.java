@@ -1,5 +1,7 @@
 package pl.sdacademy.javapoz19programowanie1;
 
+import pl.sdacademy.javapoz19programowanie1.books.Author;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
