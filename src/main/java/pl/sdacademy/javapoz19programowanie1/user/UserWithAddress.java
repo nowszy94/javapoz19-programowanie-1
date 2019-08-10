@@ -1,15 +1,13 @@
 package pl.sdacademy.javapoz19programowanie1.user;
 
-import java.util.Comparator;
-
-public class User {
+public class UserWithAddress {
     private String name;
     private Gender gender;
     private Long balance;
     private int age;
+    private Address address;
 
-
-    public User(String name, Gender gender, String balance, int age) {
+    public UserWithAddress(String name, Gender gender, String balance, int age, Address address) {
         this.name = name;
         this.gender = gender;
         this.balance = Long.valueOf(
@@ -18,6 +16,7 @@ public class User {
                         .replace(",", "")
         );
         this.age = age;
+        this.address = address;
     }
 
     public String getName() {
@@ -50,6 +49,14 @@ public class User {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     @Override
