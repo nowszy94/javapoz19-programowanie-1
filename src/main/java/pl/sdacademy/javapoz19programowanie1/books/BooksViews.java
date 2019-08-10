@@ -21,7 +21,7 @@ public class BooksViews {
         authors.stream()
                 .forEach(author -> System.out.println(author));
         System.out.println();
-        System.out.println("1. Find by nation (PL, ENG, USA)"); //TODO zrobic to dynamiczne
+        System.out.println("1. Find by nation (PL, ENG, USA)");
         System.out.println("2. Find by after birthYear");
         System.out.println("0. Wroc");
         return getDecision();
@@ -32,8 +32,13 @@ public class BooksViews {
     }
 
     public Nation getNation() {
-        String nationAsString = scanner.nextLine();
+        String nationAsString = scanner.nextLine().trim();
         return Nation.valueOf(nationAsString);
+    }
+
+    public int getBirthYear() {
+        String birthYearAsString = scanner.nextLine().trim();
+        return Integer.valueOf(birthYearAsString);
     }
 
     private int getDecisionAfterEnter() {
