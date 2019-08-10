@@ -41,6 +41,10 @@ public class BooksStart {
                     Nation nation = views.getNation();
                     authors = authorsRepository.findByNation(nation);
                     break;
+                case 2: //findAfterBirthYear
+                    int birthYear = views.getBirthYear();
+                    authors = authorsRepository.findAfterBirthYear(birthYear);
+                    break;
                 default:
                     flag = false;
             }

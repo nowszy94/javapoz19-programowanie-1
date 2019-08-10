@@ -36,6 +36,12 @@ public class BooksViews {
         return Nation.valueOf(nationAsString);
     }
 
+    public int getBirthYear() {
+        int birthYear = scanner.nextInt();
+        scanner.nextLine();
+        return birthYear;
+    }
+
     private int getDecisionAfterEnter() {
         int menu = scanner.nextInt();
         scanner.nextLine();

@@ -25,6 +25,13 @@ public class InMemoryAuthorsRepository implements AuthorsRepository {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public List<Author> findAfterBirthYear(int birthYear) {
+        return authors.stream()
+                .filter(author -> author.getBirthYear() >= birthYear)
+                .collect(Collectors.toList());
+    }
+
     private void init() {
         authors.add(new Author("Stephen", "King", 1947, Nation.USA));
         authors.add(new Author("Henryk", "Sienkiewicz", 1846, Nation.PL));
