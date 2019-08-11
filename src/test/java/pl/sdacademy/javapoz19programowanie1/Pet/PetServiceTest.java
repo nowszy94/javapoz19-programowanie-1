@@ -68,10 +68,10 @@ public class PetServiceTest {
 
         Map<String, List<Pet>> map = petService.groupByBreed();
 
-        Assert.assertEquals(map.get("Scottish Terrier").size(), 3);
-        Assert.assertEquals(map.get("French Bulldog").size(), 5);
-        Assert.assertEquals(map.get("Boxer").size(), 3);
-        Assert.assertEquals(map.get("Golden Retriever").size(), 5);
+        Assert.assertEquals(3, map.get("Scottish Terrier").size());
+        Assert.assertEquals(5, map.get("French Bulldog").size());
+        Assert.assertEquals(3, map.get("Boxer").size());
+        Assert.assertEquals(5, map.get("Golden Retriever").size());
 
     }
 
