@@ -8,4 +8,6 @@ public interface BooksRepository {
     List<Book> findByAfterReleaseYear(int releaseYear);
 
     List<Book> searchByPhrase(String phrase);
+
+    List<Book> searchByAuthor(String authorPhrase);
 }
