@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 public class PetServiceTest {
 
@@ -57,6 +58,35 @@ public class PetServiceTest {
         // then
         Assert.assertEquals(1, result.size());
         Assert.assertEquals(new Pet("pet-1", 2, "a", "xyz"), result.get(0));
+    }
+
+    @Test
+    public void sortByAgeShouldReturnSortedList() {
+        List<Pet> testPets = Arrays.asList(
+                new Pet("pet-1", 7, "a", "xyz"),
+                new Pet("pet-2", 2, "b", "abc"),
+                new Pet("pet-3", 5, "c", "def")
+        );
+        PetService petService = new PetService(new InMemoryPetRepository(testPets));
+
+        List<Pet> pets = petService.sortByAge();
+
+        Assert.assertEquals(pets.get(0), testPets.get(1));
+        Assert.assertEquals(pets.get(1), testPets.get(2));
+        Assert.assertEquals(pets.get(2), testPets.get(0));
+    }
+
+    @Test
+    public void groupByBreedShouldReturnMapWithGroupedPets() {
+        PetService petService = new PetService(new InMemoryPetRepository());
+
+        Map<String, List<Pet>> map = petService.groupByBreed();
+
+        // then
+        Assert.assertEquals(map.get("Scottish Terrier").size(), 3);
+        Assert.assertEquals(map.get("French Bulldog").size(), 5);
+        Assert.assertEquals(map.get("Boxer").size(), 3);
+        Assert.assertEquals(map.get("Golden Retriever").size(), 5);
     }
 
 }
