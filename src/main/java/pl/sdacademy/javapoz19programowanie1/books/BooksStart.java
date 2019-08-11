@@ -69,6 +69,10 @@ public class BooksStart {
                     String phrase = views.getPhrase();
                     books = booksService.searchByPhrase(phrase);
                     break;
+                case 3:
+                    String authorPhrase = views.getPhrase();
+                    books = booksService.searchByAuthor(authorPhrase);
+                    break;
                 default:
                     flag = false;
             }

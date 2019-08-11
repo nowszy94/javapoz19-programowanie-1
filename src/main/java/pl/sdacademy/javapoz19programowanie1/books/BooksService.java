@@ -20,4 +20,8 @@ public class BooksService {
     public List<Book> searchByPhrase(String phrase) {
         return booksRepository.searchByPhrase(phrase);
     }
+
+    public List<Book> searchByAuthor(String authorPhrase) {
+        return booksRepository.searchByAuthor(authorPhrase);
+    }
 }
