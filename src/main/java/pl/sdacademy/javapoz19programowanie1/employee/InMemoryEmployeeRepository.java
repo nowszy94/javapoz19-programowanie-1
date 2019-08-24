@@ -2,7 +2,10 @@ package pl.sdacademy.javapoz19programowanie1.employee;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.function.ToIntFunction;
+import java.util.stream.Collectors;
 
 public class InMemoryEmployeeRepository implements EmployeeRepository {
     private List<Employee> employees;
@@ -215,5 +218,21 @@ public class InMemoryEmployeeRepository implements EmployeeRepository {
     @Override
     public List<Employee> findAll() {
         return new ArrayList<>(employees);
+    }
+
+    @Override
+    public List<Employee> sortByAge() {
+        return sortBy(employee -> employee.getAge());
+    }
+
+    @Override
+    public List<Employee> sortBySalary() {
+        return sortBy(employee -> employee.getSalary());
+    }
+
+    private List<Employee> sortBy(ToIntFunction<Employee> selector) {
+        return employees.stream()
+                .sorted(Comparator.comparingInt(selector))
+                .collect(Collectors.toList());
     }
 }
