@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class Application {
     public static void main(String[] args) {
-        Author author1 = new Author("Henryk", "Sienk", 1846, Nation.PL);
+        Author author1 = new Author("Henryk", "Brak nazwiska ale zaczyna sie na Sienk", 1846, Nation.PL);
         Author author2 = new Author("Adam", "Mickiewicz", 1798, Nation.PL);
 
         Author author = new Author();
