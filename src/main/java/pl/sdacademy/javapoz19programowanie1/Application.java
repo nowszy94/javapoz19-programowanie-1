@@ -32,7 +32,6 @@ public class Application {
         }
     }
 
-    //po 1900
     private static void showModernAuthors(List<Author> authors) {
         for (Author author : authors) {
             if (author.getBirthYear() > 1900) {
