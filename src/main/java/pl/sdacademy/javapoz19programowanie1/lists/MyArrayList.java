@@ -49,7 +49,25 @@ public class MyArrayList {
     }
 
     public void add_cloneArray(int index, Integer value) {
+        if (index > size) {
+            throw new ArrayIndexOutOfBoundsException(index);
+        }
 
+        Integer[] newArray = new Integer[data.length + 1];
+        // 1. przepisujemy lewa czesc
+        for (int i = 0; i < index; i++) {
+            newArray[i] = data[i];
+        }
+        // 2. wstawiamy wartosc
+        newArray[index] = value;
+
+        // 3. przepisujemy prawa czesc
+        for (int i = index + 1; i < size + 1; i++) {
+            newArray[i] = data[i - 1];
+        }
+
+        this.data = newArray;
+        size++;
     }
 
     public void remove(int index) {
