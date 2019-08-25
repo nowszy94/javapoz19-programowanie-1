@@ -31,6 +31,27 @@ public class MyArrayList {
         data[size++] = value;
     }
 
+    public void add_replacing(int index, Integer value) {
+        if (index > size) {
+            throw new ArrayIndexOutOfBoundsException(index);
+        }
+
+        doubleSpaceIfNeeded();
+//        for (int i = size - 1; i >= index; i--) {
+//            data[i + 1] = data[i];
+//        }
+        for (int i = size; i > index; i--) {
+            data[i] = data[i - 1];
+        }
+
+        data[index] = value;
+        size++;
+    }
+
+    public void add_cloneArray(int index, Integer value) {
+
+    }
+
     public void remove(int index) {
         if (index >= size) {
             throw new ArrayIndexOutOfBoundsException(index);
