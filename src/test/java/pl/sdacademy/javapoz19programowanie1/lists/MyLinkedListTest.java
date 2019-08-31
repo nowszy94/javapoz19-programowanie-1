@@ -83,6 +83,26 @@ public class MyLinkedListTest {
         Assert.assertEquals((Integer) 10, myLinkedList.get(1));
         Assert.assertEquals((Integer) 30, myLinkedList.get(2));
         Assert.assertEquals((Integer) 40, myLinkedList.get(3));
+    }
 
+    @Test
+    public void addShouldAddNewItemAtIndex() {
+        // given
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.add(0);
+        myLinkedList.add(10);
+        myLinkedList.add(30);
+        myLinkedList.add(40);
+
+        // when
+        myLinkedList.add(2, 20);
+
+        // then
+        Assert.assertEquals(5, myLinkedList.size());
+        Assert.assertEquals((Integer) 0, myLinkedList.get(0));
+        Assert.assertEquals((Integer) 10, myLinkedList.get(1));
+        Assert.assertEquals((Integer) 20, myLinkedList.get(2));
+        Assert.assertEquals((Integer) 30, myLinkedList.get(3));
+        Assert.assertEquals((Integer) 40, myLinkedList.get(4));
     }
 }

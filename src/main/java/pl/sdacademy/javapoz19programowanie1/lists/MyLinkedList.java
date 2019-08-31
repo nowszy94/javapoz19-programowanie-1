@@ -56,9 +56,14 @@ public class MyLinkedList {
         size--;
     }
 
-    // TODO - na 31.08 zadanie domowe
     public void add(int index, Integer value) {
+        MyLinkedListItem toAdd = new MyLinkedListItem(value);
+        MyLinkedListItem previousElement = getElement(index - 1);
 
+        toAdd.nextItem = previousElement.nextItem;
+        previousElement.nextItem = toAdd;
+
+        size++;
     }
 
     public int size() {
